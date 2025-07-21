@@ -15,15 +15,12 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_bluetooth -> {
-                    Toast.makeText(this, "Bluetooth pressed", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.navigation_move -> {
-                    Toast.makeText(this, "Move pressed", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.navigation_massage -> {
-                    Toast.makeText(this, "Massage pressed", Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> false
