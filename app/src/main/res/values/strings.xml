@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">CarSeatController</string>
+    <string name="app_name">Car Seat Controller</string>
+    <string name="headrest_up">Headrest Up</string>
+    <string name="headrest_down">Headrest Down</string>
+    <string name="backrest_left">Backrest Left</string>
+    <string name="backrest_right">Backrest Right</string>
+    <string name="seat_front_up">Seat Front Up</string>
+    <string name="seat_front_down">Seat Front Down</string>
+    <string name="seat_left">Seat Left</string>
+    <string name="seat_right">Seat Right</string>
 </resources>

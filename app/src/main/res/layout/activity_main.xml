@@ -25,15 +25,16 @@
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:contentDescription="@string/app_name"/>
+
     </LinearLayout>
 
     <!-- Imagine scaun -->
+
     <ImageView
         android:id="@+id/seatImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/seat"
-        android:layout_centerInParent="true" />
+        android:src="@drawable/seat" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -45,7 +46,5 @@
         app:itemTextColor="@color/nav_item_color"
         app:menu="@menu/bottom_nav_menu"
         app:labelVisibilityMode="labeled"/>
-
-
 
 </RelativeLayout>
