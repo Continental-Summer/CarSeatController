@@ -2,13 +2,13 @@
     <item
         android:id="@+id/navigation_bluetooth"
         android:icon="@drawable/ic_bluetooth"
-        android:title="Bluetooth" />
+        android:title="@string/bluetooth" />
     <item
         android:id="@+id/navigation_move"
         android:icon="@drawable/ic_seat_move"
-        android:title="Move" />
+        android:title="@string/move" />
     <item
         android:id="@+id/navigation_massage"
         android:icon="@drawable/ic_seat_massage"
-        android:title="Massage" />
+        android:title="@string/massage" />
 </menu>

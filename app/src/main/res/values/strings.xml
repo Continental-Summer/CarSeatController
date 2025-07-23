@@ -8,4 +8,7 @@
     <string name="seat_front_down">Seat Front Down</string>
     <string name="seat_left">Seat Left</string>
     <string name="seat_right">Seat Right</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="move">Move</string>
+    <string name="massage">Massage</string>
 </resources>
