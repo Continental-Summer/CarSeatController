@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_bluetooth"
+        android:icon="@drawable/ic_bluetooth"
+        android:title="Bluetooth" />
+    <item
+        android:id="@+id/navigation_move"
+        android:icon="@drawable/ic_seat_move"
+        android:title="Move" />
+    <item
+        android:id="@+id/navigation_massage"
+        android:icon="@drawable/ic_seat_massage"
+        android:title="Massage" />
+</menu>

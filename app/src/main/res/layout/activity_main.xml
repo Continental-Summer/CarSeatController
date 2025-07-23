@@ -8,8 +8,8 @@
     android:background="#000000"
     tools:context=".MainActivity">
 
-    <!-- Logo Continental -->
     <LinearLayout
+        android:id="@+id/logo_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -24,9 +24,15 @@
             android:src="@drawable/continental_logo"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:contentDescription="@string/app_name"/>
-
+            android:contentDescription="@string/app_name" />
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/logo_container"
+        android:layout_above="@id/bottom_navigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -37,198 +43,5 @@
         app:itemIconTint="@color/nav_item_color"
         app:itemTextColor="@color/nav_item_color"
         app:menu="@menu/bottom_nav_menu"
-        app:labelVisibilityMode="labeled"/>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/seatImage"
-            android:layout_width="631dp"
-            android:layout_height="419dp"
-            android:layout_marginTop="70dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/seat"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/button_tetiera_sus"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_up"
-            app:layout_constraintBottom_toBottomOf="@id/seatImage"
-            app:layout_constraintEnd_toEndOf="@id/seatImage"
-            app:layout_constraintHorizontal_bias="0.563"
-            app:layout_constraintStart_toStartOf="@id/seatImage"
-            app:layout_constraintTop_toTopOf="@id/seatImage"
-            app:layout_constraintVertical_bias="0.126"
-            app:tint="@color/orange_white_selector" />
-
-        <ImageButton
-            android:id="@+id/button_tetiera_jos"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_down"
-            app:layout_constraintBottom_toBottomOf="@id/seatImage"
-            app:layout_constraintEnd_toEndOf="@id/seatImage"
-            app:layout_constraintHorizontal_bias="0.774"
-            app:layout_constraintStart_toStartOf="@id/seatImage"
-            app:layout_constraintTop_toTopOf="@id/seatImage"
-            app:layout_constraintVertical_bias="0.126"
-            app:tint="@color/orange_white_selector" />
-
-        <ImageButton
-            android:id="@+id/button_spatar_fata"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_left"
-            app:layout_constraintBottom_toBottomOf="@id/seatImage"
-            app:layout_constraintEnd_toEndOf="@id/seatImage"
-            app:layout_constraintHorizontal_bias="0.516"
-            app:layout_constraintStart_toStartOf="@id/seatImage"
-            app:layout_constraintTop_toTopOf="@id/seatImage"
-            app:layout_constraintVertical_bias="0.406"
-            app:tint="@color/orange_white_selector" />
-
-        <ImageButton
-            android:id="@+id/button_spatar_spate"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_right"
-            app:layout_constraintBottom_toBottomOf="@id/seatImage"
-            app:layout_constraintEnd_toEndOf="@id/seatImage"
-            app:layout_constraintHorizontal_bias="0.776"
-            app:layout_constraintStart_toStartOf="@id/seatImage"
-            app:layout_constraintTop_toTopOf="@id/seatImage"
-            app:layout_constraintVertical_bias="0.406"
-            app:tint="@color/orange_white_selector" />
-
-        <ImageButton
-            android:id="@+id/button_sezut_fata"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_left"
-            app:layout_constraintBottom_toBottomOf="@id/seatImage"
-            app:layout_constraintEnd_toEndOf="@id/seatImage"
-            app:layout_constraintHorizontal_bias="0.365"
-            app:layout_constraintStart_toStartOf="@id/seatImage"
-            app:layout_constraintTop_toTopOf="@id/seatImage"
-            app:layout_constraintVertical_bias="0.609"
-            app:tint="@color/orange_white_selector" />
-
-        <ImageButton
-            android:id="@+id/button_sezut_spate"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_right"
-            app:layout_constraintBottom_toBottomOf="@id/seatImage"
-            app:layout_constraintEnd_toEndOf="@id/seatImage"
-            app:layout_constraintHorizontal_bias="0.463"
-            app:layout_constraintStart_toStartOf="@id/seatImage"
-            app:layout_constraintTop_toTopOf="@id/seatImage"
-            app:layout_constraintVertical_bias="0.609"
-            app:tint="@color/orange_white_selector" />
-
-        <ImageButton
-            android:id="@+id/button_sezut_sus"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_up"
-            app:layout_constraintBottom_toBottomOf="@id/seatImage"
-            app:layout_constraintEnd_toEndOf="@id/seatImage"
-            app:layout_constraintHorizontal_bias="0.242"
-            app:layout_constraintStart_toStartOf="@id/seatImage"
-            app:layout_constraintTop_toTopOf="@id/seatImage"
-            app:layout_constraintVertical_bias="0.65"
-            app:tint="@color/orange_white_selector" />
-
-        <ImageButton
-            android:id="@+id/button_sezut_jos"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_down"
-            app:layout_constraintBottom_toBottomOf="@id/seatImage"
-            app:layout_constraintEnd_toEndOf="@id/seatImage"
-            app:layout_constraintHorizontal_bias="0.242"
-            app:layout_constraintStart_toStartOf="@id/seatImage"
-            app:layout_constraintTop_toTopOf="@id/seatImage"
-            app:layout_constraintVertical_bias="0.916"
-            app:tint="@color/orange_white_selector" />
-
-        <ImageButton
-            android:id="@+id/button_scaun_sus"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_up"
-            app:layout_constraintBottom_toBottomOf="@id/seatImage"
-            app:layout_constraintEnd_toEndOf="@id/seatImage"
-            app:layout_constraintHorizontal_bias="0.71"
-            app:layout_constraintStart_toStartOf="@id/seatImage"
-            app:layout_constraintTop_toTopOf="@id/seatImage"
-            app:layout_constraintVertical_bias="0.65"
-            app:tint="@color/orange_white_selector" />
-
-        <ImageButton
-            android:id="@+id/button_scaun_jos"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_down"
-            app:layout_constraintBottom_toBottomOf="@id/seatImage"
-            app:layout_constraintEnd_toEndOf="@id/seatImage"
-            app:layout_constraintHorizontal_bias="0.71"
-            app:layout_constraintStart_toStartOf="@id/seatImage"
-            app:layout_constraintTop_toTopOf="@id/seatImage"
-            app:layout_constraintVertical_bias="0.916"
-            app:tint="@color/orange_white_selector" />
-
-        <ImageButton
-            android:id="@+id/button_scaun_spate"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_right"
-            app:layout_constraintBottom_toBottomOf="@id/seatImage"
-            app:layout_constraintEnd_toEndOf="@id/seatImage"
-            app:layout_constraintHorizontal_bias="0.746"
-            app:layout_constraintStart_toStartOf="@id/seatImage"
-            app:layout_constraintTop_toTopOf="@id/seatImage"
-            app:layout_constraintVertical_bias="0.786"
-            app:tint="@color/orange_white_selector" />
-
-        <ImageButton
-            android:id="@+id/button_scaun_fata"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_left"
-            app:layout_constraintBottom_toBottomOf="@id/seatImage"
-            app:layout_constraintEnd_toEndOf="@id/seatImage"
-            app:layout_constraintHorizontal_bias="0.194"
-            app:layout_constraintStart_toStartOf="@id/seatImage"
-            app:layout_constraintTop_toTopOf="@id/seatImage"
-            app:layout_constraintVertical_bias="0.786"
-            app:tint="@color/orange_white_selector" />
-
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/buttonsGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:constraint_referenced_ids="button_tetiera_sus,button_tetiera_jos,button_spatar_fata,button_spatar_spate,button_sezut_fata,button_sezut_spate,button_sezut_sus,button_sezut_jos,button_scaun_sus,button_scaun_jos,button_scaun_spate,button_scaun_fata" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        app:labelVisibilityMode="labeled" />
 </RelativeLayout>
