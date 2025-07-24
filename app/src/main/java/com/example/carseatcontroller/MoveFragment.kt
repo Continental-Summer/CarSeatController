@@ -33,32 +33,50 @@ class MoveFragment : Fragment() {
         val buttonScaunSpate = view.findViewById<ImageButton>(R.id.button_scaun_spate)
         val buttonScaunFata = view.findViewById<ImageButton>(R.id.button_scaun_fata)
 
-        setTouchWithImageChange(buttonTetieraSus, R.drawable.tetiera)
-        setTouchWithImageChange(buttonTetieraJos, R.drawable.tetiera)
+        setTouchWithImageChange(buttonTetieraSus, R.drawable.tetiera, "TETIERA_SUS")
+        setTouchWithImageChange(buttonTetieraJos, R.drawable.tetiera, "TETIERA_JOS")
 
-        setTouchWithImageChange(buttonSpatarFata, R.drawable.spatar)
-        setTouchWithImageChange(buttonSpatarSpate, R.drawable.spatar)
+        setTouchWithImageChange(buttonSpatarFata, R.drawable.spatar, "SPATAR_FATA")
+        setTouchWithImageChange(buttonSpatarSpate, R.drawable.spatar, "SPATAR_SPATE")
 
-        setTouchWithImageChange(buttonSezutFata, R.drawable.sezut)
-        setTouchWithImageChange(buttonSezutSpate, R.drawable.sezut)
-        setTouchWithImageChange(buttonSezutSus, R.drawable.sezut_full)
-        setTouchWithImageChange(buttonSezutJos, R.drawable.sezut_full)
+        setTouchWithImageChange(buttonSezutFata, R.drawable.sezut, "SEZUT_FATA")
+        setTouchWithImageChange(buttonSezutSpate, R.drawable.sezut, "SEZUT_SPATE")
+        setTouchWithImageChange(buttonSezutSus, R.drawable.sezut_full, "SEZUT_SUS")
+        setTouchWithImageChange(buttonSezutJos, R.drawable.sezut_full, "SEZUT_JOS")
 
-        setTouchWithImageChange(buttonScaunSus, R.drawable.scaun_verde)
-        setTouchWithImageChange(buttonScaunJos, R.drawable.scaun_verde)
-        setTouchWithImageChange(buttonScaunSpate, R.drawable.scaun_verde)
-        setTouchWithImageChange(buttonScaunFata, R.drawable.scaun_verde)
+        setTouchWithImageChange(buttonScaunSus, R.drawable.scaun_verde, "SCAUN_SUS")
+        setTouchWithImageChange(buttonScaunJos, R.drawable.scaun_verde, "SCAUN_JOS")
+        setTouchWithImageChange(buttonScaunSpate, R.drawable.scaun_verde, "000111")
+        setTouchWithImageChange(buttonScaunFata, R.drawable.scaun_verde, "SCAUN_FATA")
 
         return view
     }
 
-    private fun setTouchWithImageChange(button: ImageButton, pressedImageRes: Int) {
+    private fun setTouchWithImageChange(
+        button: ImageButton,
+        pressedImageRes: Int,
+        messageToSend: String
+    ) {
         button.setOnTouchListener { _, event ->
             when (event.action) {
-                android.view.MotionEvent.ACTION_DOWN -> seatImage.setImageResource(pressedImageRes)
-                android.view.MotionEvent.ACTION_UP, android.view.MotionEvent.ACTION_CANCEL -> seatImage.setImageResource(R.drawable.seat)
+                android.view.MotionEvent.ACTION_DOWN -> {
+                    seatImage.setImageResource(pressedImageRes)
+                    sendStringToRaspberryPi(messageToSend)
+                }
+
+                android.view.MotionEvent.ACTION_UP, android.view.MotionEvent.ACTION_CANCEL -> {
+                    seatImage.setImageResource(R.drawable.seat)
+                }
             }
             false
+        }
+    }
+
+    private fun sendStringToRaspberryPi(message: String) {
+        try {
+            BluetoothConnectionManager.socket?.outputStream?.write(message.toByteArray())
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 }
