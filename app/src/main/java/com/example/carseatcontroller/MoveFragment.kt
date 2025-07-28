@@ -33,21 +33,21 @@ class MoveFragment : Fragment() {
         val buttonScaunSpate = view.findViewById<ImageButton>(R.id.button_scaun_spate)
         val buttonScaunFata = view.findViewById<ImageButton>(R.id.button_scaun_fata)
 
-        setTouchWithImageChange(buttonTetieraSus, R.drawable.tetiera, "TETIERA_SUS")
-        setTouchWithImageChange(buttonTetieraJos, R.drawable.tetiera, "TETIERA_JOS")
+        setTouchWithImageChange(buttonTetieraSus, R.drawable.tetiera, "000071")
+        setTouchWithImageChange(buttonTetieraJos, R.drawable.tetiera, "000081")
 
-        setTouchWithImageChange(buttonSpatarFata, R.drawable.spatar, "SPATAR_FATA")
-        setTouchWithImageChange(buttonSpatarSpate, R.drawable.spatar, "SPATAR_SPATE")
+        setTouchWithImageChange(buttonSpatarFata, R.drawable.spatar, "000061")
+        setTouchWithImageChange(buttonSpatarSpate, R.drawable.spatar, "000091")
 
-        setTouchWithImageChange(buttonSezutFata, R.drawable.sezut, "SEZUT_FATA")
-        setTouchWithImageChange(buttonSezutSpate, R.drawable.sezut, "SEZUT_SPATE")
-        setTouchWithImageChange(buttonSezutSus, R.drawable.sezut_full, "SEZUT_SUS")
-        setTouchWithImageChange(buttonSezutJos, R.drawable.sezut_full, "SEZUT_JOS")
+        setTouchWithImageChange(buttonSezutFata, R.drawable.sezut, "000041")
+        setTouchWithImageChange(buttonSezutSpate, R.drawable.sezut, "000051")
+        setTouchWithImageChange(buttonSezutSus, R.drawable.sezut_full, "000031")
+        setTouchWithImageChange(buttonSezutJos, R.drawable.sezut_full, "000011")
 
-        setTouchWithImageChange(buttonScaunSus, R.drawable.scaun_verde, "SCAUN_SUS")
-        setTouchWithImageChange(buttonScaunJos, R.drawable.scaun_verde, "SCAUN_JOS")
+        setTouchWithImageChange(buttonScaunSus, R.drawable.scaun_verde, "000101")
+        setTouchWithImageChange(buttonScaunJos, R.drawable.scaun_verde, "000121")
         setTouchWithImageChange(buttonScaunSpate, R.drawable.scaun_verde, "000111")
-        setTouchWithImageChange(buttonScaunFata, R.drawable.scaun_verde, "SCAUN_FATA")
+        setTouchWithImageChange(buttonScaunFata, R.drawable.scaun_verde, "000021")
 
         return view
     }
