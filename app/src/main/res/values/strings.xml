@@ -11,4 +11,8 @@
     <string name="bluetooth">Bluetooth</string>
     <string name="move">Move</string>
     <string name="massage">Massage</string>
+    <string-array name="soft_strong_array">
+        <item>Soft</item>
+        <item>Strong</item>
+    </string-array>
 </resources>
