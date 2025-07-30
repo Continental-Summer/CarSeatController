@@ -65,7 +65,6 @@ class MassageFragment : Fragment() {
         numberPickerSoftStrong.wrapSelectorWheel = false
         numberPickerSoftStrong.setOnValueChangedListener { _, _, newVal ->
             val selected = softStrongValues[newVal]
-            // Gestionează schimbarea aici dacă dorești
         }
     }
 

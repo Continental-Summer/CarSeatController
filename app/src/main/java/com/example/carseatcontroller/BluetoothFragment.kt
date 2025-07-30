@@ -176,7 +176,7 @@ class BluetoothFragment : Fragment() {
         try {
             requireContext().unregisterReceiver(discoveryReceiver)
         } catch (e: Exception) {
-            // ignore if already unregistered
+
         }
         disconnectConnection()
     }
@@ -235,12 +235,10 @@ class BluetoothFragment : Fragment() {
         }
     }
 
-    // Trimite comenzi text catre Raspberry Pi
     fun sendCommand(command: String) {
         connectionThread?.write("$command\n")
     }
 
-    // Thread pentru comunicatia Bluetooth
     private inner class BluetoothConnectionThread(val socket: BluetoothSocket) : Thread() {
         private val inputStream = socket.inputStream
         private val outputStream = socket.outputStream
@@ -257,13 +255,11 @@ class BluetoothFragment : Fragment() {
                     if (bytes > 0) {
                         val received = String(buffer, 0, bytes, Charsets.UTF_8)
                         sb.append(received)
-                        // Procesare pe linii
                         var lineEndIndex = sb.indexOf("\n")
                         while (lineEndIndex != -1) {
                             val line = sb.substring(0, lineEndIndex).trim()
                             sb.delete(0, lineEndIndex + 1)
                             Log.d(TAG, "Received line: $line")
-                            // Aici poti procesa mesajele primite de la Raspberry Pi
                         }
                     }
                 }
@@ -295,7 +291,6 @@ class BluetoothFragment : Fragment() {
         }
     }
 
-    // Adapter RecyclerView pentru device-uri Bluetooth
     inner class BluetoothDeviceAdapter(
         private val devices: List<BluetoothDevice>,
         private val onNameClick: (BluetoothDevice) -> Unit,
@@ -320,9 +315,9 @@ class BluetoothFragment : Fragment() {
             val isConnected = connectionThread != null && device == getConnectedDevice()
             holder.tvDeviceName.setTextColor(
                 if (isConnected)
-                    0xFFFFA500.toInt() // portocaliu
+                    0xFFFFA500.toInt()
                 else
-                    0xFFFFFFFF.toInt() // alb
+                    0xFFFFFFFF.toInt()
             )
 
             holder.tvDeviceName.setOnClickListener {
